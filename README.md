@@ -34,6 +34,7 @@ The response-modeling phase compared Logistic Regression with Gradient Boosting 
 The uplift phase used separate Logistic Regression models for the treated and control populations. Both models scored every opportunity in the full holdout population, and estimated uplift was calculated as the predicted activation probability under treatment minus the predicted probability without treatment. This allowed response targeting and uplift targeting to be compared at identical population depths.
 
 ## Key Results
+
 - **Response-model selection:** Logistic Regression produced stronger and more stable holdout results than Gradient Boosting. Its holdout ROC AUC was 0.5442 compared with the no-skill baseline of 0.5000, while average precision was 0.2109 compared with 0.1858. Log loss and Brier score also showed small improvements over baseline, and the alignment between training and holdout performance indicated no substantial overfitting.
 
 - **Response-targeting performance:** The top 10% of Logistic Regression scores captured 12.02% of observed activations and had an activation rate 20% higher than the overall holdout rate. Expanding targeting to the top 20% captured 23.47% of activations and maintained an activation rate 17% above the overall rate.
@@ -51,6 +52,7 @@ Uplift-targeting performance: Uplift targeting produced approximately 17 more in
 Use the uplift model to prioritize the top 30% of customer-campaign opportunities. This segment produced the strongest gain over random targeting and the largest advantage over response targeting. Model-driven performance became inconsistent beyond the top 30%, so additional targeting should be evaluated based on campaign economics and operational goals.
 
 ## Tools Used
+
 - **DuckDB and SQL:** Data loading, joins, feature engineering, outcome construction, and quality validation
 - **Python 3.11:** Modeling, evaluation, uplift analysis, and strategy comparison
 - **pandas and NumPy:** Data preparation, aggregation, validation, and reporting
@@ -59,11 +61,13 @@ Use the uplift model to prioritize the top 30% of customer-campaign opportunitie
 - **Jupyter Notebook:** End-to-end development, documentation, and presentation
 
 ## Repository Structure
-offer-targeting-analysis/
-│
+
+```text
+offer-targeting-incrementality-analysis/
+├── .gitignore
 ├── README.md
+├── requirements.txt
 ├── offer_targeting_incrementality_analysis.ipynb
-│
 └── Raw Data/
     ├── assignments.csv
     ├── campaigns.csv
@@ -71,10 +75,12 @@ offer-targeting-analysis/
     ├── eligibility.csv
     ├── offer_events.csv
     └── transactions.csv
+```
 
 The six CSV files contain the synthetic source data. The Jupyter notebook contains the complete workflow, including data loading, SQL feature engineering, quality validation, response modeling, treatment-effect analysis, uplift modeling, and the final strategy comparison. The DuckDB database is created or updated when the notebook is run.
 
 ## How to Run the Project
+
 1. Install Python 3.11 and Jupyter Notebook.
 
 2. Install the required Python packages:
