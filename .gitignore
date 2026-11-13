@@ -1,5 +1,14 @@
 # Generated DuckDB database
 offer_portfolio.duckdb
+offer_portfolio.duckdb.wal
+
+# Assistant run logs (local only)
+assistant_demo_runs.jsonl
+assistant_tests.jsonl
+
+# Scratch notebooks
+*practice*.ipynb
+*overkill*.ipynb
 
 # Jupyter temporary files
 .ipynb_checkpoints/
@@ -11,5 +20,3 @@ __pycache__/
 # Local virtual environments
 .venv/
 venv/
-offer_portfolio.duckdb.wal
-
