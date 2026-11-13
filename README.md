@@ -90,7 +90,15 @@ Incremental activations compared with random targeting at the same depth:
 
 Uplift targeting was consistently ahead in the top 30%. Beyond that, neither strategy led reliably. Each uplift decile contains only about 195 control records, so the deeper comparisons are noisy.
 
-The top response decile shows why response targeting underperformed. Those opportunities had the highest activation rates, but the control group activated almost as often (20.7%) as the treated group (22.3%). That is only 1.6 points of lift, against 6.9 points overall.
+The top 10% of each ranking shows why response targeting underperformed:
+
+| Top 10% of holdout, ranked by | Treated activation | Control activation | Observed lift |
+|---|---|---|---|
+| Response score | 22.3% | 20.7% | 1.6 pts |
+| Uplift score | 18.0% | 9.4% | 8.5 pts |
+| *Full holdout (for reference)* | *18.6%* | *11.7%* | *6.9 pts* |
+
+The response model's top decile had the highest activation rate, but its control group activated almost as often as its treated group. Those customers were likely to activate with or without the offer. The uplift model's top decile activated less often overall, but the offer made a much larger difference there. Each decile holds about 1,060 records, including roughly 195 control records, so these rates are directional.
 
 ### Supporting results
 
